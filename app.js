@@ -25,7 +25,7 @@ app.post("/", function(req, res) {
     request(url, function(err, response, body) {
         if (err) {
             console.log("error: " + err);                
-        } else if (JSON.parse(body).Title === null) {
+        } else if (JSON.parse(body).Response === "False") {
             console.log("No movie found");
         } else {
             var movieData = JSON.parse(body);
