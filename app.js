@@ -8,6 +8,7 @@ const ejs = require("ejs");
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
 
@@ -19,15 +20,21 @@ app.post("/", function(req, res) {
     var title = req.body.title;
     var year = req.body.year;
     var type = req.body.type;
+    var url = "http://www.omdbapi.com/?apikey=" + process.env.API_KEY + "&t=" + title + "&type=" + type + "&plot=full&year=" + year;
 
-    request("http://www.omdbapi.com/?apikey=" + process.env.API_KEY + "&t=" + title + "&type=" + type + "&year=" + year, function(err, response, body) {
+    request(url, function(err, response, body) {
         if (err) {
             console.log("error: " + err);                
+        } else if (JSON.parse(body).Title === null) {
+            console.log("No movie found");
         } else {
-            // console.log(body);
             var movieData = JSON.parse(body);
             res.render("movie", {
-                movieTitle: movieData.Title
+                movieTitle: movieData.Title,
+                movieYear: movieData.Year,
+                movieCast: movieData.Actors,
+                moviePlot: movieData.Plot,
+                moviePoster: movieData.Poster
             })
         }
     });

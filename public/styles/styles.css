@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    background-color: #DBFAFF;
+    color: #053847;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+p, a, li, ul, ol, q {
+    font-family: 'Jomolhari', serif;
+}
+
+header {
+    background-color: #68C6C9;
+    width: 100vw;
+}
+
+.header_inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header h3 {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 20px;
+}
+
+#body_inner {
+    margin: 30px auto;
+    width: 93vw;
+    max-width: 700px;
+}
+
+#movie_title {
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #68C6C9;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
