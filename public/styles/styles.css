@@ -2,19 +2,27 @@ html, body {
     margin: 0;
     background-color: #DBFAFF;
     color: #053847;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bowlby One SC', cursive;
 }
 
-p, a, li, ul, ol, q {
-    font-family: 'Jomolhari', serif;
+p, a, li, ul, ol, q, label {
+    font-family: 'Noticia Text', serif;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 header {
     background-color: #68C6C9;
     width: 100vw;
+    position: relative;
+    top: 0;
 }
 
 .header_inner {
@@ -26,6 +34,60 @@ header h3 {
     font-size: 1.6rem;
     margin: 0;
     padding: 20px;
+}
+
+#search_wrap {
+    width: 99vw;
+    max-width: 600px;
+    text-align: center;
+}
+
+#search_wrap,
+#error_wrap {
+    margin: 20px auto;
+}
+
+#search_wrap,
+#error_wrap,
+#body_inner {
+    min-height: calc(100vh - 221px);
+}
+
+#error_wrap {
+    text-align: center;
+}
+
+#error_wrap h1 {
+    font-size: 3rem;
+}
+
+#error_wrap p {
+    font-size: 1.8rem;
+}
+
+#error_wrap q {
+    color: #053847;
+}
+
+#search_heading {
+    font-size: 2.6rem;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    margin: 10px 6px;
+    border-radius: 6px;
+}
+
+input[type=submit] {
+    background-color: #053847;
+    color: #68C6C9;
+    padding: 6px 12px;
+    border-radius: 9px;
 }
 
 #body_inner {
@@ -44,9 +106,79 @@ img {
     margin: 0 auto;
 }
 
+#year {
+    background-color: gray;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 6px;
+    align-self: center;
+}
+
+#year_ratings_wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#ratings_wrap {
+    display: flex;
+    justify-content: space-around;
+    height: 86px;
+    border: 2px dashed gray;
+    border-radius: 16px; 
+    padding: 10px 0;
+}
+
+.rating {
+    width: 27%;
+    height: 100%;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rating p {
+    margin: 0 auto;
+}
+
+.rating_box {
+    background-color: rgb(238, 238, 238);
+    color: #053847;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+.green {
+    border: green solid 4px;
+}
+
+.yellow {
+    border: yellow solid 4px;
+}
+
+.red {
+    border: red solid 4px;
+}
+
+#restart {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0, 105, 0);
+    box-shadow: -2px -2px 8px black;
+}
+
+#restart a {
+    color: white;
+    display: block;
+    padding: 4px 8px;
+}
+
 footer {
     background-color: #68C6C9;
     width: 100vw;
+    height: 62px;
     margin: 0 auto;
     padding: 20px 0;
     text-align: center;

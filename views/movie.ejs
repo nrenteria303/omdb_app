@@ -3,9 +3,29 @@
 <div id="body_inner">
     <h1 id="movie_title"><%= movieTitle %></h1>
     <img src="<%= moviePoster %>" alt="Movie poster for <%= movieTitle %>">
-    <p><%= movieYear %></p>
-    <p>Cast: <%= movieCast %></p>
-    <p>Plot: <%= moviePlot %></p>
+    <div id="year_ratings_wrap">
+        <p id="year" class="bold"><%= movieYear %></p>
+        <div id="ratings_wrap" class="bold">
+            <div class="rating">
+                <p>IMDb</p>
+                <p class="rating_box"><%= ratingIMDB %></p>
+            </div>
+            <div class="rating">
+                <p>Rotten Tomatoes</p>
+                <p class="rating_box"><%= ratingRT %></p>
+            </div>
+            <div class="rating">
+                <p>Metacritic</p>
+                <p class="rating_box"><%= ratingMC %></p>
+            </div>
+        </div>
+    </div>
+    <p><span class="bold">Director: </span><%= movieDirector %></p>
+    <p><span class="bold">Cast: </span><%= movieCast %></p>
+    <p><span class="bold">Plot: </span><%= moviePlot %></p>
+    <div id="restart">
+        <a href="/">Search again</a>
+    </div>
 </div>
 
 <%- include("footer") -%>
