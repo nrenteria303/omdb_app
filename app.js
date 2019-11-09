@@ -16,10 +16,6 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
-// app.get("/error", function(req, res) {
-
-// });
-
 app.post("/", function(req, res) {
     var title = req.body.title;
     var year = req.body.year;
@@ -34,26 +30,17 @@ app.post("/", function(req, res) {
             res.render("error");
         } else {
             var movieData = JSON.parse(body);
-            var IMDb = movieData.Ratings[0].Value;
-            var RT = movieData.Ratings[1].Value;
-            var MC = movieData.Ratings[2].Value;
-            // var IMDbvalue = IMDb.split("/")[0];
-            // var RTvalue = RT.split("%")[0];
-            // var MCvalue = MC.split("/")[0];
-            // var IMDbnum = parseFloat(IMDbvalue);
             res.render("movie", {
                 movieTitle: movieData.Title,
                 movieYear: movieData.Year,
                 movieDirector: movieData.Director,
+                movieGenre: movieData.Genre,
+                movieWriter: movieData.Writer,
+                movieAwards: movieData.Awards,
                 movieCast: movieData.Actors,
                 moviePlot: movieData.Plot,
                 moviePoster: movieData.Poster,
-                ratingIMDB: IMDb,
-                ratingRT: RT,
-                ratingMC: MC,
-                // IMDbvalue: IMDbnum,
-                // RTvalue: RTvalue,
-                // MCvalue: MCvalue
+                movieRatings: movieData.Ratings
             })
         }
     });

@@ -2,25 +2,53 @@
 
 <div id="body_inner">
     <h1 id="movie_title"><%= movieTitle %></h1>
-    <img src="<%= moviePoster %>" alt="Movie poster for <%= movieTitle %>">
-    <div id="year_ratings_wrap">
-        <p id="year" class="bold"><%= movieYear %></p>
-        <div id="ratings_wrap" class="bold">
-            <div class="rating">
-                <p>IMDb</p>
-                <p class="rating_box"><%= ratingIMDB %></p>
-            </div>
-            <div class="rating">
-                <p>Rotten Tomatoes</p>
-                <p class="rating_box"><%= ratingRT %></p>
-            </div>
-            <div class="rating">
-                <p>Metacritic</p>
-                <p class="rating_box"><%= ratingMC %></p>
-            </div>
+    <div id="img_y-r_wrap">
+        <img src="<%= moviePoster %>" alt="Movie poster for <%= movieTitle %>">
+        <div id="year_ratings_wrap">
+            <p id="year" class="bold"><%= movieYear %></p>
+            <% if (movieRatings.length > 0) { %>
+                <div id="ratings_wrap" class="bold">
+                    <div class="rating">
+                        <p class="rating_name">IMDb</p>
+                        <% if (parseFloat(movieRatings[0].Value.split("/")[0]) > 8) { %>
+                        <p class="rating_box green"><%= movieRatings[0].Value %></p>
+                        <% } else if (parseFloat(movieRatings[0].Value.split("/")[0]) >= 6) { %>
+                        <p class="rating_box yellow"><%= movieRatings[0].Value %></p>
+                        <% } else { %>
+                        <p class="rating_box red"><%= movieRatings[0].Value %></p>
+                        <% } %> %>
+                        </div>
+                    <% if (movieRatings.length > 1) { %>
+                    <div class="rating">
+                        <p class="rating_name">Rotten Tomatoes</p>
+                        <% if (parseFloat(movieRatings[1].Value.split("%")[0]) > 80) { %>
+                        <p class="rating_box green"><%= movieRatings[1].Value %></p>
+                        <% } else if (parseFloat(movieRatings[1].Value.split("%")[0]) >= 60) { %>
+                        <p class="rating_box yellow"><%= movieRatings[1].Value %></p>
+                        <% } else { %>
+                        <p class="rating_box red"><%= movieRatings[1].Value %></p>
+                        <% } %> %>
+                    </div>
+                        <% if (movieRatings.length > 2) { %>
+                    <div class="rating">
+                        <p class="rating_name">Metacritic</p>
+                        <% if (parseFloat(movieRatings[2].Value.split("/")[0]) > 80) { %>
+                        <p class="rating_box green"><%= movieRatings[2].Value %></p>
+                        <% } else if (parseFloat(movieRatings[2].Value.split("/")[0]) >= 60) { %>
+                        <p class="rating_box yellow"><%= movieRatings[2].Value %></p>
+                        <% } else { %>
+                        <p class="rating_box red"><%= movieRatings[2].Value %></p>
+                        <% } %> %>
+                    </div>
+                        <% } %>
+                    <% } %>
+                </div>
+            <% } %>
         </div>
     </div>
+    <p><span class="bold">Genre: </span><%= movieGenre %></p>
     <p><span class="bold">Director: </span><%= movieDirector %></p>
+    <p><span class="bold">Writer: </span><%= movieWriter %></p>
     <p><span class="bold">Cast: </span><%= movieCast %></p>
     <p><span class="bold">Plot: </span><%= moviePlot %></p>
     <div id="restart">
