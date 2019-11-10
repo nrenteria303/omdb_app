@@ -148,7 +148,7 @@ img {
 #ratings_wrap {
     display: flex;
     justify-content: space-around;
-    background-color: white;
+    background-image: linear-gradient(to bottom right, white 40%, #68C6C9 180%);
     height: 90px;
     align-self: center;
     border: 4px outset lightgray;
