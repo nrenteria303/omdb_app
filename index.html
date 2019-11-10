@@ -14,18 +14,20 @@
                 <h3>Movie Search <i class="fas fa-film"></i></h3>
             </div>
         </header>
-        <div id="search_wrap">
-            <h1 id="search_heading">Search for a Movie or Show</h1>
-            <form action="/" method="POST">
-                <label for="title-input">Title: </label><input type="text" name="title" id="title-input" required><br>
-                <label for="year-input">Year: </label><input type="number" name="year" id="year-input" maxlength="4" size="4"><br> 
-                <select name="type" id="">
-                    <option value="movie">movie</option>
-                    <option value="series">series</option>
-                </select><br>
-                <input type="submit">
-            </form>
-        </div>
+        <main>
+            <div id="search_wrap">
+                <h1 id="search_heading">Search for a Movie or Show</h1>
+                <form action="/" method="POST">
+                    <label for="title-input">Title: </label><input type="text" name="title" id="title-input" required><br>
+                    <label for="year-input">Year: </label><input type="number" name="year" id="year-input" maxlength="4" size="4"><br> 
+                    <select name="type" id="">
+                        <option value="movie">movie</option>
+                        <option value="series">series</option>
+                    </select><br>
+                    <input type="submit">
+                </form>
+            </div>
+        </main>
         <footer id="home_footer">
             <p>&copy; Nick Renteria 2019</p>
         </footer>

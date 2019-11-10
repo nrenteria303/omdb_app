@@ -40,6 +40,14 @@ header h3 {
     font-size: 2.6rem;
 }
 
+main {
+    margin: 0 auto;
+    background-image: url("../imgs/theater.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
 #search_wrap {
     width: 99vw;
     max-width: 600px;
@@ -48,13 +56,16 @@ header h3 {
 
 #search_wrap,
 #error_wrap {
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
 #search_wrap,
-#error_wrap,
 #body_inner {
-    min-height: calc(100vh - 221px);
+    min-height: calc(100vh - 190px);
+}
+
+#error_wrap {
+    min-height: calc(100vh - 222px);
 }
 
 #error_wrap {
@@ -76,6 +87,16 @@ header h3 {
 #search_heading {
     font-size: 2.6rem;
     margin: 0 auto;
+    padding-top: 40px;
+    text-shadow: 0 0 8px #DBFAFF;
+}
+
+form {
+    background-color: #DBFAFF;
+    width: 280px;
+    margin: 0 auto;
+    border: outset grey 3px;
+    border-radius: 12px;
 }
 
 label {
@@ -127,9 +148,10 @@ img {
 #ratings_wrap {
     display: flex;
     justify-content: space-around;
+    background-color: white;
     height: 90px;
     align-self: center;
-    border: 2px dashed gray;
+    border: 4px outset lightgray;
     border-radius: 16px; 
     padding: 10px;
 }
