@@ -33,7 +33,7 @@ header {
 header h3 {
     font-size: 1.6rem;
     margin: 0;
-    padding: 8px 0;
+    padding: 8px 0 8px 20px;
 }
 
 .fa-film {
@@ -228,6 +228,10 @@ footer p {
 }
 
 @media (min-width: 800px) {
+    header h3 {
+        padding: 8px 0;
+    }
+
     #img_y-r_wrap {
         display: flex;
         width: 540px;
